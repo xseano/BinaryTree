@@ -67,7 +67,39 @@ BinaryTree<T>::~BinaryTree()
  * @param key the data to add to the tree
  */
 template <class T>
-void insert(T key)
+bool insert(T key)
 {
-    
+    Node<T> *side = NULL;
+    Node<T> *init = new Node<T>(key);
+
+    if (!root<T>)
+    {
+        // root doesnt exist, lets create one
+        root<T> = init;
+        return true;
+    }
+
+    if (key == root<T>->data)
+    {
+        return false;
+    }
+    else if (key < root<T>->data)
+    {
+        // data is larger than root, recurse left side
+        side<T> = root<T>->left;
+    }
+    else if (key > root<T>->data)
+    {
+        // data is larger than root, recurse right side
+        side<T> = root<T>->right;
+    }
+
+    if (!side<T>)
+    {
+        // the root's child node (left or right) doesnt exist, lets reassign it to the new data
+        side<T> = init;
+        return true;
+    }
+
+    return false;
 }

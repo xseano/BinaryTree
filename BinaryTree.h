@@ -16,7 +16,7 @@ class BinaryTree
         BinaryTree();
         ~BinaryTree();
 
-        void insert(T key); // places data into tree
+        bool insert(T key); // places data into tree
 };
 
 #include "BinaryTree.cpp"
