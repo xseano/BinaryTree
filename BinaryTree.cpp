@@ -60,3 +60,14 @@ BinaryTree<T>::~BinaryTree()
 {
     clear();
 }
+
+/**
+ * @brief Creates a new node and places in the tree
+ *
+ * @param key the data to add to the tree
+ */
+template <class T>
+void insert(T key)
+{
+    
+}

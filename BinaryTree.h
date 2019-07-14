@@ -2,14 +2,23 @@
 // oberoi, sean
 // ssoberoi
 
+#ifndef BINARY_TREE_H
+#define BINARY_TREE_H
 
-#ifndef DATASTRUCTURES_BINARYTREE_H
-#define DATASTRUCTURES_BINARYTREE_H
+#include <iostream>
+#include <vector>
+using namespace std;
 
+template <typename T>
+class BinaryTree
+{
+    public:
+        BinaryTree();
+        ~BinaryTree();
 
-class BinaryTree {
-
+        void insert(T key); // places data into tree
 };
 
+#include "BinaryTree.cpp"
 
 #endif
