@@ -2,8 +2,6 @@
 // oberoi, sean
 // ssoberoi
 
-#include "BinaryTree.h"
-
 template <typename T>
 struct Node
 {
@@ -44,6 +42,12 @@ template <typename T>
 Node<T> *root = NULL;
 
 /**
+ * @brief latest root reference
+ */
+template <typename T>
+Node<T> *last_root = NULL;
+
+/**
  * @brief treee Constructor
  */
 template <typename T>
@@ -67,9 +71,9 @@ BinaryTree<T>::~BinaryTree()
  * @param key the data to add to the tree
  */
 template <class T>
-bool insert(T key)
+void insert(T key)
 {
-    Node<T> *side = NULL;
+    Node<T> *local_root = NULL;
     Node<T> *init = new Node<T>(key);
 
     if (!root<T>)
@@ -79,25 +83,36 @@ bool insert(T key)
         return true;
     }
 
-    if (key == root<T>->data)
+    if (last_root<T>)
+    {
+        local_root<T> = last_root;
+    }
+    else
+    {
+        local_root<T> = root;
+    }
+
+    if (key == local_root->data)
     {
         return false;
     }
-    else if (key < root<T>->data)
+    else if (key < local_root->data)
     {
         // data is larger than root, recurse left side
-        side<T> = root<T>->left;
+        local_root<T> = local_root<T>->left;
+        insert(key);
     }
-    else if (key > root<T>->data)
+    else if (key > local_root->data)
     {
         // data is larger than root, recurse right side
-        side<T> = root<T>->right;
+        local_root<T> = local_root<T>->right;
+        insert(key);
     }
 
-    if (!side<T>)
+    if (!local_root<T>)
     {
         // the root's child node (left or right) doesnt exist, lets reassign it to the new data
-        side<T> = init;
+        local_root<T> = init;
         return true;
     }
 
