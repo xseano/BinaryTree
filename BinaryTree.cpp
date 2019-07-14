@@ -8,7 +8,7 @@ template <typename T>
 struct Node
 {
     /**
-     * @brief the Node's data
+     * @brief the data or key
      */
     T data;
 
@@ -23,7 +23,7 @@ struct Node
     Node* right;
 
     /**
-     * @brief Node Constructor
+     * @brief nodee constructor
      */
     Node() {}
 
@@ -36,3 +36,27 @@ struct Node
      */
     Node(T d, Node<T> *l = 0, Node<T> *r = 0) : data(d), left(l), right(r) {}
 };
+
+/**
+ * @brief the root node
+ */
+template <typename T>
+Node<T> *root = NULL;
+
+/**
+ * @brief treee Constructor
+ */
+template <typename T>
+BinaryTree<T>::BinaryTree()
+{
+    root<T> = NULL;
+}
+
+/**
+ * @brief tree Destructor
+ */
+template <typename T>
+BinaryTree<T>::~BinaryTree()
+{
+    clear();
+}
