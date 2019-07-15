@@ -32,25 +32,20 @@ BinaryTree<T>::~BinaryTree()
  * @param key the data to add to the tree
  */
 template <class T>
-void BinaryTree<T>::insert(T key, Node<T> *last_root)
+void BinaryTree<T>::insert(T key, Node<T> *local_root)
 {
-    Node<T> *local_root = NULL;
-    Node<T> *init = new Node<T>(key);
+    Node<T> *temp = new Node<T>(key);
 
     if (!root<T>)
     {
         // root doesnt exist, lets create one
-        root<T> = init;
+        root<T> = temp;
         return;
     }
 
-    if (!last_root)
+    if (!local_root)
     {
         local_root = root<T>;
-    }
-    else
-    {
-        local_root = last_root;
     }
 
     if (key == local_root->data)
@@ -73,7 +68,7 @@ void BinaryTree<T>::insert(T key, Node<T> *last_root)
     if (!local_root)
     {
         // the root's child node (left or right) doesnt exist, lets reassign it to the new data
-        local_root = init;
+        local_root = temp;
         return;
     }
 

@@ -49,7 +49,7 @@ class BinaryTree
         BinaryTree();
         ~BinaryTree();
 
-        void insert(T key, Node<T> *last_root = NULL); // places data into tree
+        void insert(T key, Node<T> *local_root = NULL); // places data into tree
         T displayRoot();
 };
 

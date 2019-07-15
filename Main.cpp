@@ -15,7 +15,7 @@ int main()
 
 
     tree->insert(20);
-    tree->displayRoot();
+    cout << tree->displayRoot() << endl;
 
     /*
     tree->insert(40);
