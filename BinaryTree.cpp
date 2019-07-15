@@ -45,6 +45,7 @@ void BinaryTree<T>::insert(T key, Node<T> *local_root)
 
     if (!local_root)
     {
+        // local_root is a default parameter, if no value is supplied we assume root
         local_root = root<T>;
     }
 
@@ -56,13 +57,11 @@ void BinaryTree<T>::insert(T key, Node<T> *local_root)
     {
         // data is larger than root, recurse left side
         local_root = local_root->left;
-        insert(key, local_root);
     }
     else if (key > local_root->data)
     {
         // data is larger than root, recurse right side
         local_root = local_root->right;
-        insert(key, local_root);
     }
 
     if (!local_root)
@@ -70,6 +69,10 @@ void BinaryTree<T>::insert(T key, Node<T> *local_root)
         // the root's child node (left or right) doesnt exist, lets reassign it to the new data
         local_root = temp;
         return;
+    }
+    else
+    {
+        insert(key, local_root);
     }
 
     return;
