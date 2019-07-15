@@ -17,7 +17,7 @@ int main()
     tree->insert(70);
     tree->insert(60);
     tree->insert(80);
-    tree->inorder_traversal();
+    tree->preorder_traversal();
 
     return 0;
 }

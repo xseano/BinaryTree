@@ -86,3 +86,17 @@ void BinaryTree<T>::inorder_traversal(Node<T> *parent)
         inorder_traversal(parent->right);
     }
 }
+
+template <class T>
+void BinaryTree<T>::preorder_traversal(Node<T> *parent)
+{
+    if (parent != NULL)
+    {
+        // visit the root
+        cout << parent->data << endl;
+        // traverse the left subtree
+        preorder_traversal(parent->left);
+        // traverse the right subtree
+        preorder_traversal(parent->right);
+    }
+}

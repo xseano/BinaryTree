@@ -52,11 +52,16 @@ template <typename T>
 class BinaryTree
 {
     public:
+        // Constructor/Destructor
         BinaryTree();
         ~BinaryTree();
 
-        void insert(T key, Node<T> *next_parent = root<T>); // places data into tree
+        // Data Handlers
+        void insert(T key, Node<T> *next_parent = root<T>);
+
+        // Traversal Methods
         void inorder_traversal(Node<T> *parent = root<T>);
+        void preorder_traversal(Node<T> *parent = root<T>);
 };
 
 #include "BinaryTree.cpp"
