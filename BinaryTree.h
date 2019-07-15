@@ -55,7 +55,7 @@ class BinaryTree
         BinaryTree();
         ~BinaryTree();
 
-        void insert(T key, Node<T> *next_parent = NULL); // places data into tree
+        void insert(T key, Node<T> *next_parent = root<T>); // places data into tree
         void inorder_traversal(Node<T> *parent = root<T>);
 };
 

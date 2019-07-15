@@ -37,19 +37,13 @@ void BinaryTree<T>::insert(T key, Node<T> *next_parent)
         return;
     }
 
-    if (!next_parent)
-    {
-        // next_parent is a default parameter, if no value is supplied we assume root
-        next_parent = root<T>;
-    }
-
     if (key == next_parent->data)
     {
         return;
     }
     else if (key < next_parent->data)
     {
-        // data is larger than root, recurse left side
+        // data is smaller than root, recurse left side
         next_parent = next_parent->left;
     }
     else if (key > next_parent->data)
