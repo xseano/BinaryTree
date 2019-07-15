@@ -9,7 +9,8 @@ typedef int datatype;
 int main()
 {
     BinaryTree<int>* tree = new BinaryTree<int>();
-    
+
+    tree->insert(50);
     tree->insert(30);
     tree->insert(20);
     tree->insert(40);

@@ -44,23 +44,26 @@ void BinaryTree<T>::insert(T key, Node<T> *next_parent)
     else if (key < next_parent->data)
     {
         // data is smaller than root, recurse left side
-        next_parent = next_parent->left;
+        if (!next_parent->left)
+        {
+            next_parent->left = temp;
+        }
+        else
+        {
+            insert(key, next_parent->left);
+        }
     }
     else if (key > next_parent->data)
     {
         // data is larger than root, recurse right side
-        next_parent = next_parent->right;
-    }
-
-    if (!next_parent)
-    {
-        // the root's child node (left or right) doesnt exist, lets reassign it to the new data
-        next_parent = temp;
-        return;
-    }
-    else
-    {
-        insert(key, next_parent);
+        if (!next_parent->right)
+        {
+            next_parent->right = temp;
+        }
+        else
+        {
+            insert(key, next_parent->right);
+        }
     }
 
     return;
