@@ -3,12 +3,6 @@
 // ssoberoi
 
 /**
- * @brief the root node
- */
-template <typename T>
-Node<T> *root = NULL;
-
-/**
  * @brief tree Constructor
  */
 template <typename T>
@@ -79,7 +73,12 @@ void BinaryTree<T>::insert(T key, Node<T> *next_parent)
 }
 
 template <class T>
-T BinaryTree<T>::displayRoot()
+void BinaryTree<T>::inorder_traversal(Node<T> *parent)
 {
-    return root<T>->data;
+    if (parent != NULL)
+    {
+        inorder_traversal(parent->left);
+        cout << parent->data << endl;
+        inorder_traversal(parent->right);
+    }
 }

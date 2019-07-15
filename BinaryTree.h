@@ -42,6 +42,12 @@ struct Node
     Node(T d, Node<T> *l = 0, Node<T> *r = 0) : data(d), left(l), right(r) {}
 };
 
+/**
+ * @brief the root node
+ */
+template <typename T>
+Node<T> *root = NULL;
+
 template <typename T>
 class BinaryTree
 {
@@ -49,8 +55,8 @@ class BinaryTree
         BinaryTree();
         ~BinaryTree();
 
-        void insert(T key, Node<T> *local_root = NULL); // places data into tree
-        T displayRoot();
+        void insert(T key, Node<T> *next_parent = NULL); // places data into tree
+        void inorder_traversal(Node<T> *parent = root<T>);
 };
 
 #include "BinaryTree.cpp"

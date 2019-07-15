@@ -11,17 +11,12 @@ int main()
     BinaryTree<int>* tree = new BinaryTree<int>();
     
     tree->insert(30);
-    cout << tree->displayRoot() << endl;
-    
     tree->insert(20);
-    cout << tree->displayRoot() << endl;
-
-    /*
     tree->insert(40);
     tree->insert(70);
     tree->insert(60);
     tree->insert(80);
-    */
+    tree->inorder_traversal();
 
     return 0;
 }
