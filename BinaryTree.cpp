@@ -46,10 +46,12 @@ void BinaryTree<T>::insert(T key, Node<T> *next_parent)
         // data is smaller than root, recurse left side
         if (!next_parent->left)
         {
+            // the left ptr is null, assign it the new data
             next_parent->left = temp;
         }
         else
         {
+            // the data exists, keep traversing the left subtree until we find the leaf
             insert(key, next_parent->left);
         }
     }
@@ -58,10 +60,12 @@ void BinaryTree<T>::insert(T key, Node<T> *next_parent)
         // data is larger than root, recurse right side
         if (!next_parent->right)
         {
+            // the right ptr is null, assign it the new data
             next_parent->right = temp;
         }
         else
         {
+            // the data exists, keep traversing the right subtree until we find the leaf
             insert(key, next_parent->right);
         }
     }
@@ -74,8 +78,11 @@ void BinaryTree<T>::inorder_traversal(Node<T> *parent)
 {
     if (parent != NULL)
     {
+        // traverse the left subtree
         inorder_traversal(parent->left);
+        // visit the root
         cout << parent->data << endl;
+        // traverse the right subtree
         inorder_traversal(parent->right);
     }
 }
