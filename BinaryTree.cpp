@@ -3,7 +3,7 @@
 // ssoberoi
 
 /**
- * @brief tree Constructor
+ * @brief tree constructor
  */
 template <typename T>
 BinaryTree<T>::BinaryTree()
@@ -13,7 +13,7 @@ BinaryTree<T>::BinaryTree()
 }
 
 /**
- * @brief tree Destructor
+ * @brief tree destructor
  */
 template <typename T>
 BinaryTree<T>::~BinaryTree()
@@ -44,6 +44,7 @@ void BinaryTree<T>::clear(Node<T> *parent)
  * @brief Creates a new node and places in the tree
  *
  * @param key the data to add to the tree
+ * @param parent the potential leaf node where the data will be stored
  */
 template <class T>
 void BinaryTree<T>::insert(T key, Node<T> *parent)
@@ -93,6 +94,11 @@ void BinaryTree<T>::insert(T key, Node<T> *parent)
     return;
 }
 
+/**
+ * @brief InOrder listing of data in the tree
+ *
+ * @param parent the node to traverse from
+ */
 template <class T>
 void BinaryTree<T>::inorder_traversal(Node<T> *parent)
 {
@@ -107,6 +113,11 @@ void BinaryTree<T>::inorder_traversal(Node<T> *parent)
     }
 }
 
+/**
+ * @brief PreOrder listing of data in the tree
+ *
+ * @param parent the node to traverse from
+ */
 template <class T>
 void BinaryTree<T>::preorder_traversal(Node<T> *parent)
 {
@@ -121,6 +132,11 @@ void BinaryTree<T>::preorder_traversal(Node<T> *parent)
     }
 }
 
+/**
+ * @brief PostOrder listing of data in the tree
+ *
+ * @param parent the node to traverse from
+ */
 template <class T>
 void BinaryTree<T>::postorder_traversal(Node<T> *parent)
 {
@@ -139,6 +155,7 @@ void BinaryTree<T>::postorder_traversal(Node<T> *parent)
  * @brief Locates a node with a set of data
  *
  * @param key the data to find in the tree
+ * @param parent the potential leaf node where the data may be located
  */
 template <class T>
 void BinaryTree<T>::search(T key, Node<T> *parent)
