@@ -114,3 +114,52 @@ void BinaryTree<T>::postorder_traversal(Node<T> *parent)
         cout << parent->data << endl;
     }
 }
+
+/**
+ * @brief Locates a node with a set of data
+ *
+ * @param key the data to find in the tree
+ */
+template <class T>
+void BinaryTree<T>::search(T key, Node<T> *parent)
+{
+    if (!root<T>)
+    {
+        // root doesnt exist, exit operation
+        cout << "Root doesn't exist!" << endl;
+        return;
+    }
+
+    if (key < parent->data)
+    {
+        // the target data is smaller than the root, so we know it must be in the left subtree
+        if (!parent->left)
+        {
+            cout << "The value " << key << " was not found in the tree." << endl;
+            return;
+        }
+        else
+        {
+            cout << "Moving to left of " << parent->data << endl;
+            search(key, parent->left);
+        }
+    }
+    else if (key > parent->data)
+    {
+        // the target data is larger than the root, so we know it must be in the right subtree
+        if (!parent->right)
+        {
+            cout << "The value " << key << " was not found in the tree." << endl;
+            return;
+        }
+        else
+        {
+            cout << "Moving to right of " << parent->data << endl;
+            search(key, parent->right);
+        }
+    }
+    else
+    {
+        cout << "The value " << parent->data << " has been found!   " << endl;
+    }
+}
