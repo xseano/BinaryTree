@@ -64,6 +64,8 @@ class BinaryTree
         void inorder_traversal(Node<T> *parent = root<T>);
         void preorder_traversal(Node<T> *parent = root<T>);
         void postorder_traversal(Node<T> *parent = root<T>);
+
+        void search(T key, Node<T> *parent = root<T>);
 };
 
 #include "BinaryTree.cpp"
