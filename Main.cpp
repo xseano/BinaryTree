@@ -14,10 +14,10 @@ int main()
     tree->insert(20);
     tree->insert(60);
     tree->insert(50);
-    tree->insert(10);
+    tree->insert(30);
     tree->insert(70);
     tree->insert(10);
-    tree->search(70);
+    tree->clear();
 
     return 0;
 }

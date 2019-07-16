@@ -18,7 +18,26 @@ BinaryTree<T>::BinaryTree()
 template <typename T>
 BinaryTree<T>::~BinaryTree()
 {
-    //
+    clear();
+}
+
+/**
+ * @brief Clears all nodes from the tree
+ *
+ * @param parent the node to clear
+ */
+template <class T>
+void BinaryTree<T>::clear(Node<T> *parent)
+{
+    if (parent)
+    {
+        Node<T> *tmp_l = parent->left;
+        Node<T> *tmp_r = parent->right;
+
+        clear(tmp_l);
+        clear(tmp_r);
+        delete parent;
+    }
 }
 
 /**
