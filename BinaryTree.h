@@ -56,8 +56,9 @@ class BinaryTree
         BinaryTree();
         ~BinaryTree();
 
-        // Data Handlers
+        // Data Operations
         void insert(T key, Node<T> *parent = root<T>);
+        void remove(T key, Node<T> *parent = root<T>);
 
         // Traversal Methods
         void inorder_traversal(Node<T> *parent = root<T>);

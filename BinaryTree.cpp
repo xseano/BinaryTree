@@ -114,3 +114,35 @@ void BinaryTree<T>::postorder_traversal(Node<T> *parent)
         cout << parent->data << endl;
     }
 }
+
+/**
+ * @brief Locates then removes a node with a set of data
+ *
+ * @param key the data to remove from the tree
+ */
+template <class T>
+void BinaryTree<T>::remove(T key, Node<T> *parent)
+{
+    if (!root<T>)
+    {
+        // root doesnt exist, exit operation
+        return;
+    }
+
+    if (key < parent->data)
+    {
+        // the target data is smaller than the root, so we know it must lie in the left subtree
+        if (parent->left)
+        {
+            remove(key, parent->left);
+        }
+    }
+    else if (key > parent->data)
+    {
+        // the target data is larger than the root, so we know it must lie in the right subtree
+        if (parent->right)
+        {
+            remove(key, parent->right);
+        }
+    }
+}
