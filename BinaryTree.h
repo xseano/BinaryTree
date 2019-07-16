@@ -12,25 +12,10 @@ using namespace std;
 template <typename T>
 struct Node
 {
-    /**
-     * @brief the data or key
-     */
     T data;
-
-    /**
-     * @brief the child pointer to the left
-     */
-    Node* left;
-
-    /**
-     * @brief the child pointer to the right
-     */
-    Node* right;
-
-    /**
-     * @brief nodee constructor
-     */
     Node() {}
+    Node* left;
+    Node* right;
 
     /**
      * @brief Node Initializer List
@@ -46,7 +31,7 @@ struct Node
  * @brief the root node
  */
 template <typename T>
-Node<T> *root = NULL;
+Node<T> *root;
 
 template <typename T>
 class BinaryTree
@@ -64,8 +49,8 @@ class BinaryTree
         void inorder_traversal(Node<T> *parent = root<T>);
         void preorder_traversal(Node<T> *parent = root<T>);
         void postorder_traversal(Node<T> *parent = root<T>);
+
 };
 
 #include "BinaryTree.cpp"
-
 #endif

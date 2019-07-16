@@ -17,7 +17,7 @@ int main()
     tree->insert(10);
     tree->insert(70);
     tree->insert(10);
-    tree->search(100);
+    tree->search(70);
 
     return 0;
 }

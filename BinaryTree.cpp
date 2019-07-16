@@ -8,6 +8,7 @@
 template <typename T>
 BinaryTree<T>::BinaryTree()
 {
+    // instantiate the root node
     root<T> = NULL;
 }
 
@@ -76,7 +77,7 @@ void BinaryTree<T>::insert(T key, Node<T> *parent)
 template <class T>
 void BinaryTree<T>::inorder_traversal(Node<T> *parent)
 {
-    if (parent != NULL)
+    if (parent)
     {
         // first we traverse the left subtree
         inorder_traversal(parent->left);
@@ -90,7 +91,7 @@ void BinaryTree<T>::inorder_traversal(Node<T> *parent)
 template <class T>
 void BinaryTree<T>::preorder_traversal(Node<T> *parent)
 {
-    if (parent != NULL)
+    if (parent)
     {
         // first we display the root
         cout << parent->data << endl;
@@ -104,7 +105,7 @@ void BinaryTree<T>::preorder_traversal(Node<T> *parent)
 template <class T>
 void BinaryTree<T>::postorder_traversal(Node<T> *parent)
 {
-    if (parent != NULL)
+    if (parent)
     {
         // first we traverse the left subtree
         postorder_traversal(parent->left);
