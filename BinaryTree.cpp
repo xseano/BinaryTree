@@ -107,7 +107,7 @@ void BinaryTree<T>::inorder_traversal(Node<T> *parent)
         // first we traverse the left subtree
         inorder_traversal(parent->left);
         // then display the root
-        cout << parent->data << endl;
+        std::cout << parent->data << std::endl;
         // and then traverse the right subtree
         inorder_traversal(parent->right);
     }
@@ -124,7 +124,7 @@ void BinaryTree<T>::preorder_traversal(Node<T> *parent)
     if (parent)
     {
         // first we display the root
-        cout << parent->data << endl;
+        std::cout << parent->data << std::endl;
         // then traverse the left subtree
         preorder_traversal(parent->left);
         // and then traverse the right subtree
@@ -147,7 +147,7 @@ void BinaryTree<T>::postorder_traversal(Node<T> *parent)
         // then we traverse the right subtree
         postorder_traversal(parent->right);
         // and then display the root at the end
-        cout << parent->data << endl;
+        std::cout << parent->data << std::endl;
     }
 }
 
@@ -163,7 +163,7 @@ void BinaryTree<T>::search(T key, Node<T> *parent)
     if (!root<T>)
     {
         // root doesnt exist, exit operation
-        cout << "Root doesn't exist!" << endl;
+        std::cout << "Root doesn't exist!" << std::endl;
         return;
     }
 
@@ -172,12 +172,12 @@ void BinaryTree<T>::search(T key, Node<T> *parent)
         // the target data is smaller than the root, so we know it must be in the left subtree
         if (!parent->left)
         {
-            cout << "The value " << key << " was not found in the tree." << endl;
+            std::cout << "The value " << key << " was not found in the tree." << std::endl;
             return;
         }
         else
         {
-            cout << "Moving to left of " << parent->data << endl;
+            std::cout << "Moving to left of " << parent->data << std::endl;
             search(key, parent->left);
         }
     }
@@ -186,17 +186,17 @@ void BinaryTree<T>::search(T key, Node<T> *parent)
         // the target data is larger than the root, so we know it must be in the right subtree
         if (!parent->right)
         {
-            cout << "The value " << key << " was not found in the tree." << endl;
+            std::cout << "The value " << key << " was not found in the tree." << std::endl;
             return;
         }
         else
         {
-            cout << "Moving to right of " << parent->data << endl;
+            std::cout << "Moving to right of " << parent->data << std::endl;
             search(key, parent->right);
         }
     }
     else
     {
-        cout << "The value " << parent->data << " has been found!   " << endl;
+        std::cout << "The value " << parent->data << " has been found!   " << std::endl;
     }
 }
