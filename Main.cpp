@@ -8,7 +8,7 @@ typedef int datatype;
 
 int main()
 {
-    BinaryTree<int>* tree = new BinaryTree<int>();
+    BinaryTree<datatype>* tree = new BinaryTree<datatype>();
 
     tree->insert(40);
     tree->insert(20);
@@ -17,7 +17,7 @@ int main()
     tree->insert(30);
     tree->insert(70);
     tree->insert(10);
-    tree->clear();
+    tree->postorder_traversal();
 
     return 0;
 }
