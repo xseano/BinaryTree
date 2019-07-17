@@ -3,3 +3,4 @@ Main.o
 BinaryTree.o
 .depend
 docs/
+.DS_Store
