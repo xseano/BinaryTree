@@ -41,6 +41,22 @@ void BinaryTree<T>::clear(Node<T> *parent)
 }
 
 /**
+ * @brief Checks whether the tree is empty or not
+ *
+ * @param parent the node to check
+ */
+template <class T>
+bool BinaryTree<T>::isEmpty(Node<T> *parent)
+{
+    if (!parent)
+    {
+        return true;
+    }
+
+    return false;
+}
+
+/**
  * @brief Creates a new node and places in the tree
  *
  * @param key the data to add to the tree

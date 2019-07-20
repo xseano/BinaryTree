@@ -45,6 +45,8 @@ class BinaryTree
         void search(T key, Node<T> *parent = root<T>);
         void clear(Node<T> *parent = root<T>);
 
+        bool isEmpty(Node<T> *parent = root<T>);
+
         // Traversal Methods
         void inorder_traversal(Node<T> *parent = root<T>);
         void preorder_traversal(Node<T> *parent = root<T>);
