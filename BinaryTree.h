@@ -48,7 +48,7 @@ class BinaryTree
         void clear(Node<T> *parent = root<T>);
 
         bool isEmpty(Node<T> *parent = root<T>);
-        void getNumberOfNodes(int *counter = &c, Node<T> *parent = root<T>);
+        int getNumberOfNodes(int *counter = &c, Node<T> *parent = root<T>);
 
         // Traversal Methods
         void inorder_traversal(Node<T> *parent = root<T>);

@@ -63,21 +63,18 @@ bool BinaryTree<T>::isEmpty(Node<T> *parent)
  * @param parent the node to recurse from
  */
 template <class T>
-void BinaryTree<T>::getNumberOfNodes(int *counter, Node<T> *parent)
+int BinaryTree<T>::getNumberOfNodes(int *counter, Node<T> *parent)
 {
     if (!parent)
     {
-        std::cout << (*counter) << std::endl;
-        return;
+        return -1;
     }
-    else
-    {
-        std::cout << parent->data << std::endl;
 
-        (*counter)++;
-        getNumberOfNodes(counter, parent->left);
-        getNumberOfNodes(counter, parent->right);
-    }
+    (*counter)++;
+    getNumberOfNodes(counter, parent->left);
+    getNumberOfNodes(counter, parent->right);
+
+    return *counter;
 }
 
 /**
