@@ -17,7 +17,8 @@ int main()
     tree->insert(30);
     tree->insert(70);
     tree->insert(10);
-    tree->postorder_traversal();
+
+    tree->getNumberOfNodes();
 
     return 0;
 }

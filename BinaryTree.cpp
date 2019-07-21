@@ -57,6 +57,30 @@ bool BinaryTree<T>::isEmpty(Node<T> *parent)
 }
 
 /**
+ * @brief Checks how many nodes exist within the tree
+ *
+ * @param counter the number of nodes
+ * @param parent the node to recurse from
+ */
+template <class T>
+void BinaryTree<T>::getNumberOfNodes(int *counter, Node<T> *parent)
+{
+    if (!parent)
+    {
+        std::cout << (*counter) << std::endl;
+        return;
+    }
+    else
+    {
+        std::cout << parent->data << std::endl;
+
+        (*counter)++;
+        getNumberOfNodes(counter, parent->left);
+        getNumberOfNodes(counter, parent->right);
+    }
+}
+
+/**
  * @brief Creates a new node and places in the tree
  *
  * @param key the data to add to the tree
