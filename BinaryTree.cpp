@@ -18,6 +18,7 @@ BinaryTree<T>::BinaryTree()
 template <typename T>
 BinaryTree<T>::~BinaryTree()
 {
+    // pipelined clear function
     clear();
 }
 
@@ -31,11 +32,15 @@ void BinaryTree<T>::clear(Node<T> *parent)
 {
     if (parent)
     {
+        // create temp references to child nodes before parent deletion
         Node<T> *tmp_l = parent->left;
         Node<T> *tmp_r = parent->right;
 
+        // recurse the subtrees
         clear(tmp_l);
         clear(tmp_r);
+
+        // delete the current node
         delete parent;
     }
 }
@@ -50,6 +55,7 @@ bool BinaryTree<T>::isEmpty(Node<T> *parent)
 {
     if (!parent)
     {
+        // root doesn't exist, there can't be any other nodes
         return true;
     }
 
@@ -67,13 +73,18 @@ int BinaryTree<T>::getNumberOfNodes(int *counter, Node<T> *parent)
 {
     if (!parent)
     {
+        // parent doesn't exist, let the respective calling function move on
         return -1;
     }
 
+    // our current node exists, increment counter
     (*counter)++;
+
+    // recurse through both left and right subtrees
     getNumberOfNodes(counter, parent->left);
     getNumberOfNodes(counter, parent->right);
 
+    // return the final counter to the main calling program
     return *counter;
 }
 
@@ -91,12 +102,13 @@ T BinaryTree<T>::getRootData(Node<T> *parent)
     }
     else
     {
+        // root exists, return the set data
         return parent->data;
     }
 }
 
 /**
- * @brief Sets the root node to point to new data
+ * @brief Sets the root node to point to new key
  *
  * @param parent the node to rewrite
  */
@@ -105,10 +117,12 @@ void BinaryTree<T>::setRootData(T key, Node<T> *parent)
 {
     if (!parent)
     {
+        // root doesn't exist, let's create a new one for this tree
         insert(key);
     }
     else
     {
+        // root does exist, reassign its value to the new key
         parent->data = key;
     }
 }
