@@ -43,7 +43,7 @@ class BinaryTree
         ~BinaryTree();
 
         // Data Operations
-        void insert(T key, Node<T> *parent = root<T>);
+        void add(T key, Node<T> *parent = root<T>);
         void search(T key, Node<T> *parent = root<T>);
         void clear(Node<T> *parent = root<T>);
 

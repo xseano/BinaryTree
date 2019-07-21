@@ -10,13 +10,13 @@ int main()
 {
     BinaryTree<datatype>* tree = new BinaryTree<datatype>();
 
-    tree->insert(40);
-    tree->insert(20);
-    tree->insert(60);
-    tree->insert(50);
-    tree->insert(30);
-    tree->insert(70);
-    tree->insert(10);
+    tree->add(40);
+    tree->add(20);
+    tree->add(60);
+    tree->add(50);
+    tree->add(30);
+    tree->add(70);
+    tree->add(10);
 
     tree->setRootData(100);
     std::cout << tree->getRootData() << std::endl;

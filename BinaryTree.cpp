@@ -118,7 +118,7 @@ void BinaryTree<T>::setRootData(T key, Node<T> *parent)
     if (!parent)
     {
         // root doesn't exist, let's create a new one for this tree
-        insert(key);
+        add(key);
     }
     else
     {
@@ -134,7 +134,7 @@ void BinaryTree<T>::setRootData(T key, Node<T> *parent)
  * @param parent the potential leaf node where the data will be stored
  */
 template <class T>
-void BinaryTree<T>::insert(T key, Node<T> *parent)
+void BinaryTree<T>::add(T key, Node<T> *parent)
 {
     Node<T> *temp = new Node<T>(key);
 
@@ -160,7 +160,7 @@ void BinaryTree<T>::insert(T key, Node<T> *parent)
         else
         {
             // the data exists, keep traversing the left subtree until we find the leaf
-            insert(key, parent->left);
+            add(key, parent->left);
         }
     }
     else if (key > parent->data)
@@ -174,7 +174,7 @@ void BinaryTree<T>::insert(T key, Node<T> *parent)
         else
         {
             // the data exists, keep traversing the right subtree until we find the leaf
-            insert(key, parent->right);
+            add(key, parent->right);
         }
     }
 
