@@ -47,9 +47,14 @@ class BinaryTree
         void search(T key, Node<T> *parent = root<T>);
         void clear(Node<T> *parent = root<T>);
 
+        // Info
         bool isEmpty(Node<T> *parent = root<T>);
-        int getNumberOfNodes(int *counter = &c, Node<T> *parent = root<T>);
+
+        // Getters
         T getRootData(Node<T> *parent = root<T>);
+        int getNumberOfNodes(int *counter = &c, Node<T> *parent = root<T>);
+
+        // Setters
         void setRootData(T key, Node<T> *parent = root<T>);
 
         // Traversal Methods
