@@ -78,6 +78,24 @@ int BinaryTree<T>::getNumberOfNodes(int *counter, Node<T> *parent)
 }
 
 /**
+ * @brief Returns the root value
+ *
+ * @param parent the node to evaluate
+ */
+template <class T>
+T BinaryTree<T>::getRootData(Node<T> *parent)
+{
+    if (!parent)
+    {
+        return -1;
+    }
+    else
+    {
+        return parent->data;
+    }
+}
+
+/**
  * @brief Creates a new node and places in the tree
  *
  * @param key the data to add to the tree

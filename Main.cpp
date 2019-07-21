@@ -18,7 +18,7 @@ int main()
     tree->insert(70);
     tree->insert(10);
 
-    std::cout << tree->getNumberOfNodes() << std::endl;
+    std::cout << tree->getRootData() << std::endl;
 
     return 0;
 }
