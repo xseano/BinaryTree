@@ -96,6 +96,24 @@ T BinaryTree<T>::getRootData(Node<T> *parent)
 }
 
 /**
+ * @brief Sets the root node to point to new data
+ *
+ * @param parent the node to rewrite
+ */
+template <class T>
+void BinaryTree<T>::setRootData(T key, Node<T> *parent)
+{
+    if (!parent)
+    {
+        insert(key);
+    }
+    else
+    {
+        parent->data = key;
+    }
+}
+
+/**
  * @brief Creates a new node and places in the tree
  *
  * @param key the data to add to the tree

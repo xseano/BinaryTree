@@ -50,6 +50,7 @@ class BinaryTree
         bool isEmpty(Node<T> *parent = root<T>);
         int getNumberOfNodes(int *counter = &c, Node<T> *parent = root<T>);
         T getRootData(Node<T> *parent = root<T>);
+        void setRootData(T key, Node<T> *parent = root<T>);
 
         // Traversal Methods
         void inorder_traversal(Node<T> *parent = root<T>);

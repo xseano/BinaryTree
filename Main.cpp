@@ -18,6 +18,7 @@ int main()
     tree->insert(70);
     tree->insert(10);
 
+    tree->setRootData(100);
     std::cout << tree->getRootData() << std::endl;
 
     return 0;
